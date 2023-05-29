@@ -1,6 +1,15 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+/* @import 'tailwindcss/colors'; */
+
+.primary-icon {
+  @apply text-icon; /* Apply the 'text-icon1' utility class defined in Tailwind CSS */
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;

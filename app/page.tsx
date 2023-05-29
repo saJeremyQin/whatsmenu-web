@@ -85,7 +85,7 @@ export default function Home() {
           <div className="w-1/5 flex items-center justify-center group">
             <FontAwesomeIcon
               icon={faQrcode}
-              className="w-1/3 transition-transform group-hover:scale-110"
+              className="w-1/3 primary-icon transition-transform group-hover:scale-110"
             />
           </div>
           <div className='flex flex-col ml-6'>
