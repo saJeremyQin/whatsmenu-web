@@ -62,14 +62,14 @@ export default function Home() {
         <div
             className="inline-flex group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"    
         >
-          <div className="w-1/5 flex items-center justify-center group">
+          <div className="w-1/5 flex items-center justify-center hidden md:flex group">
             <FontAwesomeIcon
               icon={faClock}
               className="w-1/3 primary-icon transition-transform group-hover:scale-110"
             />
           </div>
           <div className='flex flex-col ml-6'>
-            <h4 className={`mb-3`}>
+            <h4 className='mb-3'>
               Change your menu at any time{' '}
             </h4>
             <p className={`m-0 max-w-[45ch] text-sm opacity-50`} >
@@ -81,14 +81,14 @@ export default function Home() {
         <div
             className="inline-flex group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"    
         >
-          <div className="w-1/5 flex items-center justify-center group">
+          <div className="w-1/5 flex items-center justify-center hidden md:flex group">
             <FontAwesomeIcon
               icon={faUser}
               className="w-1/3 primary-icon transition-transform group-hover:scale-110"
             />
           </div>
           <div className='flex flex-col ml-6'>
-            <h4 className={`mb-3`}>
+            <h4 className='mb-3'>
               Roles and Data{' '}
             </h4>
             <p className={`m-0 max-w-[45ch] text-sm opacity-50`} >
@@ -100,7 +100,7 @@ export default function Home() {
         <div
             className="inline-flex group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"    
         >
-          <div className="w-1/5 flex items-center justify-center group">
+          <div className="w-1/5 flex items-center justify-center hidden md:flex group">
             <FontAwesomeIcon
               icon={faMoneyBill}
               className="w-1/3 primary-icon transition-transform group-hover:scale-110"
@@ -120,18 +120,18 @@ export default function Home() {
         <div
             className="inline-flex group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"    
         >
-          <div className="w-1/5 flex items-center justify-center group">
+          <div className="w-1/5 flex items-center justify-center hidden md:flex group">
             <FontAwesomeIcon
               icon={faMugHot}
               className="w-1/3 primary-icon transition-transform group-hover:scale-110"
             />
           </div>
           <div className='flex flex-col ml-6'>
-            <h4 className={`mb-3`}>
+            <h4 className='mb-3'>
               Build your own App/Web{' '}
             </h4>
             <p className={`m-0 max-w-[45ch] text-sm opacity-50`} >
-              Customize your own APP/Website at the cheapest price, we are a highly-experienced team, with Designers, Engineers and analysts.
+              Customize your own APP/Website at the cheapest price, We are a highly-experienced team with Designers, Engineers and Analysts.
             </p>
           </div>
         </div>
