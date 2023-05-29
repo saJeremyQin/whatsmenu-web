@@ -68,7 +68,7 @@ export default function Home() {
               className="w-1/3 primary-icon transition-transform group-hover:scale-110"
             />
           </div>
-          <div className='flex flex-col ml-6'>
+          <div className='flex flex-col ml-6 w-full md:w-auto md:ml-3'>
             <h4 className='mb-3'>
               Change your menu at any time{' '}
             </h4>
@@ -87,7 +87,7 @@ export default function Home() {
               className="w-1/3 primary-icon transition-transform group-hover:scale-110"
             />
           </div>
-          <div className='flex flex-col ml-6'>
+          <div className='flex flex-col ml-6 w-full md:w-auto md:ml-3'>
             <h4 className='mb-3'>
               Roles and Data{' '}
             </h4>
@@ -106,7 +106,7 @@ export default function Home() {
               className="w-1/3 primary-icon transition-transform group-hover:scale-110"
             />
           </div>
-          <div className='flex flex-col ml-6'>
+          <div className='flex flex-col ml-6 w-full md:w-auto md:ml-3'>
             {/* <h4 className={`mb-3 text-xl font-semibold`}> */}
             <h4 className='mb-3'>
               Online Payment{' '}
@@ -126,7 +126,7 @@ export default function Home() {
               className="w-1/3 primary-icon transition-transform group-hover:scale-110"
             />
           </div>
-          <div className='flex flex-col ml-6'>
+          <div className='flex flex-col ml-6 w-full md:w-auto md:ml-3'>
             <h4 className='mb-3'>
               Build your own App/Web{' '}
             </h4>
