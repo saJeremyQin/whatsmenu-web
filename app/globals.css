@@ -8,7 +8,7 @@
 /* @import 'tailwindcss/colors'; */
 
 .primary-icon {
-  @apply text-icon; /* Apply the 'text-icon1' utility class defined in Tailwind CSS */
+  color: theme('colors.icon'); 
 }
 
 :root {
