@@ -7,7 +7,7 @@ const PrivacyPage: React.FC = () => {
       <p className="mb-4">
         Last updated: [Date]
         <br />
-        This Privacy Policy describes how [Your Company/App Name] ("we," "us," or "our") collects, uses, and shares personal information when you use our mobile application [App Name] (the "App").
+        This Privacy Policy describes how [WhatsMenu] collects, uses, and shares personal information when you use our mobile application [WhatsMenu] .
       </p>
       <h2 className="text-xl font-bold mb-2">Information We Collect</h2>
       <h3 className="text-lg font-bold mb-1">1.1 Personal Information:</h3>
