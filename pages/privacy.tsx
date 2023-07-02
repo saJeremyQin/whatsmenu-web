@@ -5,9 +5,9 @@ const PrivacyPage: React.FC = () => {
     <div className="container mx-auto py-8 px-4">
       <h1 className="text-2xl font-bold mb-4">Privacy Policy</h1>
       <p className="mb-4">
-        Last updated: [Date]
+        Last updated: 02-07-2023
         <br />
-        This Privacy Policy describes how [WhatsMenu] collects, uses, and shares personal information when you use our mobile application [WhatsMenu] .
+        This Privacy Policy describes how WhatsMenu collects, uses, and shares personal information when you use our mobile application WhatsMenu .
       </p>
       <h2 className="text-xl font-bold mb-2">Information We Collect</h2>
       <h3 className="text-lg font-bold mb-1">1.1 Personal Information:</h3>
