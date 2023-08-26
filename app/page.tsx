@@ -26,7 +26,7 @@ export default function Home() {
               height={50}
               priority
             />
-            <p className='pt-2 text-primary'>WhatsMenu</p>
+            <p className='pt-2 text-primary'>Download</p>
           </a>
         </div>
       </div>
