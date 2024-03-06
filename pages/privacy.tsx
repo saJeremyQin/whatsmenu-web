@@ -22,7 +22,7 @@ const PrivacyPage: React.FC = () => {
       <h2 className="text-xl font-bold mb-2">How We Use Your Information</h2>
       <h3 className="text-lg font-bold mb-1">2.1 Personal Information:</h3>
       <ul className="list-disc list-inside mb-4">
-        <li>To provide and maintain the App's functionality</li>
+        <li>To provide and maintain the App &apos;s functionality</li>
         <li>To communicate with you and respond to your inquiries</li>
         <li>To send you promotional materials, updates, and important notices</li>
       </ul>
@@ -35,7 +35,7 @@ const PrivacyPage: React.FC = () => {
       </ul>
       <h3 className="text-lg font-bold mb-1">3.1 Service Providers:</h3>
       <ul className="list-disc list-inside mb-4">
-        <li>We may engage third-party companies and individuals to facilitate the App's services or 
+        <li>We may engage third-party companies and individuals to facilitate the App&apos;s services or 
           perform app-related activities on our behalf.</li>
       </ul>
       <h3 className="text-lg font-bold mb-1">3.2 Legal Requirements:</h3>
@@ -58,7 +58,7 @@ const PrivacyPage: React.FC = () => {
         <li>We take reasonable measures to protect your personal information from 
       unauthorized access or disclosure.</li>
       </ul> 
-      <h2 className="text-xl font-bold mb-2">Children's Privacy</h2> 
+      <h2 className="text-xl font-bold mb-2">Children&apos;s Privacy</h2> 
       <ul className="list-disc list-inside mb-4" style={{listStyleType:'none'}}>
         <li>Our App is not intended for children under the age of 13. We do not 
       knowingly collect personal information from children under 13.
