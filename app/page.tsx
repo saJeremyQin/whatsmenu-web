@@ -6,11 +6,11 @@ import { faUser,faQrcode, faMugHot, faClock, faMoneyBill } from '@fortawesome/fr
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 text-primary flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex left-4">
+        <p className="fixed left-0 top-0 text-primary flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30" >
           Contact us with +61 451 561 068
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
+        <div className="bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
           <a
             className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
             href="/whatsMenu.apk"
@@ -27,6 +27,15 @@ export default function Home() {
               priority
             />
             <p className='pt-2 text-primary'>Download</p>
+          </a>
+          <a
+            href="https://admin.emenu.au"
+            className="ml-24 text-primary relative top-0 lg:static"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color:"#8455f6" }}
+          >
+            Admin Entry
           </a>
         </div>
       </div>
