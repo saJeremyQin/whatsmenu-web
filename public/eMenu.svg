@@ -5,7 +5,7 @@
  <g class="layer">
   <title>Layer 1</title>
   <g id="root">
-   <rect class="background" fill="#ffffff" height="2000%" id="svg_10" width="2000%" x="-1000%" y="-1000%"/>
+   <rect class="background" fill="transparent" height="2000%" id="svg_10" width="2000%" x="-1000%" y="-1000%"/>
    <g class="content" id="content" transform="matrix(1,0,0,1,-5.5,0)">
     <g class="icon" id="svg_11">
      <g id="svg_2">
