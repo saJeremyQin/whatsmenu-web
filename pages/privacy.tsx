@@ -7,7 +7,7 @@ const PrivacyPage: React.FC = () => {
       <p className="mb-4">
         Last updated: 02-07-2023
         <br />
-        This Privacy Policy describes how WhatsMenu collects, uses, and shares personal information when you use our mobile application WhatsMenu .
+        This Privacy Policy describes how eMenu collects, uses, and shares personal information when you use our mobile application eMenu.
       </p>
       <h2 className="text-xl font-bold mb-2">Information We Collect</h2>
       <h3 className="text-lg font-bold mb-1">1.1 Personal Information:</h3>
