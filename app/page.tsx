@@ -139,7 +139,7 @@ export default function Home() {
               height={50}
               priority
             />
-            <p className='text-primary'>Download</p>
+            <p className='text-primary'>Download Android App</p>
           </a>
         </div>
       </div>
