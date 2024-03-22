@@ -12,18 +12,33 @@ jobs:
     runs-on: ubuntu-latest  # Use an Ubuntu runner
 
     steps:
+      - name: Get VPC IP
+        id: vpc-ip
+        uses: haythem/public-ip@v1.2
+
+      - name: Add IP to AWS Security group
+        id: add-ip
+        run: |
+          aws ec2 authorize-security-group-ingress \
+            --group-id $SG \
+            --ip-permissions IpProtocol=tcp,FromPort=22,ToPort=22,IpRanges="[{CidrIp=${IP},Description=${DESC}}]"
+
+      - name: Get Rule ID
+        id: get-rule-id
+        run: |
+          rule_id=$(aws ec2 describe-security-group-rules --group-id $SG --output json | \
+            jq -r '.SecurityGroupRules[] | select(.Description == "Github") | .SecurityGroupRuleId')
+          echo "::set-output name=rule_id::$rule_id"
+
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install SSH key
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          
       - name: SSH into EC2 and deploy
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@ec2-13-210-68-210.ap-southeast-2.compute.amazonaws.com 'bash -s' << 'EOF'
-            cd next-emenu
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+
+          ssh -o StrictHostKeyChecking=no -i private_key ubuntu@ec2-13-210-68-210.ap-southeast-2.compute.amazonaws.com 'bash -s' << 'EOF'
+            cd /home/ubuntu/next-emenu
             git pull origin master  # Pull latest changes from main branch
             npm install            # Install dependencies
             npm run build          # Build Next.js app
@@ -31,5 +46,7 @@ jobs:
             pm2 start next --name "next-emenu" -- start -p 3001  # Start Next.js app with PM2
             sudo systemctl restart nginx  # Restart Nginx
           EOF
-
-
+    env:
+      IP: ${{ steps.vpc-ip.outputs.ipv4 }}/32
+      DESC: 'Github'
+      SG: 'sg-075d74bfe50e02789' # Replace with your security group ID
