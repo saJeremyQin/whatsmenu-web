@@ -1,5 +1,4 @@
-# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
-# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
+# This workflow will run tests using node and then publish a nextjs website to an ec2 instance when a release is created
 
 name: Deploy to EC2
 
@@ -23,9 +22,7 @@ jobs:
 
       - name: SSH into EC2 and deploy
         run: |
-          ssh -o StrictHostKeyChecking=no -i no -i - <<EOF
-            $SSH_PRIVATE_KEY
-            ubuntu@ec2-13-210-68-210.ap-southeast-2.compute.amazonaws.com 'bash -s' << 'EOF'
+          echo "$SSH_PRIVATE_KEY" | ssh -o StrictHostKeyChecking=no -i - ubuntu@ec2-13-210-68-210.ap-southeast-2.compute.amazonaws.com 'bash -s' << 'EOF'
             cd next-emenu
             git pull origin master  # Pull latest changes from main branch
             npm install            # Install dependencies
