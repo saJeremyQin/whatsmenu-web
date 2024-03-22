@@ -24,7 +24,7 @@ jobs:
       - name: SSH into EC2 and deploy
         run: |
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ubuntu@ec2-13-210-68-210.ap-southeast-2.compute.amazonaws.com 'bash -s' << 'EOF'
-            cd /path/to/your/nextjs/app
+            cd next-emenu
             git pull origin master  # Pull latest changes from main branch
             npm install            # Install dependencies
             npm run build          # Build Next.js app
