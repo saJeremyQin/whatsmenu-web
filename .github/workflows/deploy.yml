@@ -1,0 +1,35 @@
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
+
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - master  # Adjust the branch name as needed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Use an Ubuntu runner
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install SSH key
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: SSH into EC2 and deploy
+        run: |
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ubuntu@YOUR_EC2_PUBLIC_IP 'bash -s' << 'EOF'
+            cd /path/to/your/nextjs/app
+            git pull origin main  # Pull latest changes from main branch
+            npm install            # Install dependencies
+            npm run build          # Build Next.js app
+            pm2 stop all           # Stop all existing PM2 processes
+            pm2 start npm --name "next-emenu" -- start -p 3001  # Start Next.js app with PM2
+            sudo systemctl restart nginx  # Restart Nginx
+          EOF
+
