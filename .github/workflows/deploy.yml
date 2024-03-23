@@ -51,5 +51,6 @@ jobs:
             sudo systemctl restart nginx  # Restart Nginx
           EOF
     env:
+      IP: ${{ steps.vpc-ip.outputs.ipv4 }}/32
       DESC: 'Github'
-      SG: 'sg-075d74bfe50e02789' # Replace with your security group ID
+      SG: 'sg-075d74bfe50e02789'
