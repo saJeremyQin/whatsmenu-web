@@ -22,6 +22,9 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: "ap-southeast-2"
+          IP: ${{ steps.vpc-ip.outputs.ipv4 }}/32
+          DESC: 'Github'
+          SG: 'sg-075d74bfe50e02789'
         run: |
           aws ec2 authorize-security-group-ingress \
             --group-id $SG \
@@ -50,7 +53,4 @@ jobs:
             pm2 start next --name "next-emenu" -- start -p 3001  # Start Next.js app with PM2
             sudo systemctl restart nginx  # Restart Nginx
           EOF
-    env:
-      IP: ${{ steps.vpc-ip.outputs.ipv4 }}/32
-      DESC: 'Github'
-      SG: 'sg-075d74bfe50e02789'
+
