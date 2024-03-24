@@ -30,14 +30,14 @@ jobs:
             --group-id $SG \
             --ip-permissions IpProtocol=tcp,FromPort=22,ToPort=22,IpRanges="[{CidrIp=${IP},Description=${DESC}}]"
 
-      - name: Checkout code
-        uses: actions/checkout@v2
       - name: Set up SSH
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/Github-Actions
           chmod 600 ~/.ssh/Github-Actions
-          ls -l ~/.ssh  # 确保文件已创建
+      
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       - name: SSH into EC2 and deploy
         run: |
