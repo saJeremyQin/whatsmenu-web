@@ -30,13 +30,6 @@ jobs:
             --group-id $SG \
             --ip-permissions IpProtocol=tcp,FromPort=22,ToPort=22,IpRanges="[{CidrIp=${IP},Description=${DESC}}]"
 
-      - name: Get Rule ID
-        id: get-rule-id
-        run: |
-          rule_id=$(aws ec2 describe-security-group-rules --group-id $SG --output json | \
-            jq -r '.SecurityGroupRules[] | select(.Description == "Github") | .SecurityGroupRuleId')
-          echo "::set-output name=rule_id::$rule_id"
-
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Set up SSH
