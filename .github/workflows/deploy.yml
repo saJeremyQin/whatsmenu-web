@@ -42,15 +42,14 @@ jobs:
       - name: Set up SSH
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/eMenu-key.pem
-          chmod 600 ~/.ssh/eMenu-key.pem
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/Github-Actions
+          chmod 600 ~/.ssh/Github-Actions
           ls -l ~/.ssh  # 确保文件已创建
-          cat ~/.ssh/eMenu-key.pem  # 显示私钥内容，用于调试
 
       - name: SSH into EC2 and deploy
         run: |
 
-          ssh -o StrictHostKeyChecking=no -i ~/.ssh/eMenu-key.pem ubuntu@ec2-13-210-68-210.ap-southeast-2.compute.amazonaws.com 'bash -s' << 'EOF'
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/Github-Actions ubuntu@ec2-13-210-68-210.ap-southeast-2.compute.amazonaws.com 'bash -s' << 'EOF'
             cd /home/ubuntu/next-emenu
             git pull origin master  # Pull latest changes from main branch
             npm install            # Install dependencies
